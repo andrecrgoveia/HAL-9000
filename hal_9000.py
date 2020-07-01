@@ -3,6 +3,7 @@ from chatterbot import ChatBot
 
 bot = ChatBot('HAL 9000')
 
+# Criando uma lista
 conversa = []
 
 bot.set_trainer(ListTrainer)
