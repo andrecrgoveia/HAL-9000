@@ -1,18 +1,38 @@
-from chatterbot.trainers import ListTrainer
 from chatterbot import ChatBot
+from chatterbot.trainers import ListTrainer
 
 bot = ChatBot('HAL 9000')
+bot = ChatBot(
+    'HAL 9000',
+    storage_adapter='chatterbot.storage.SQLStorageAdapter',
+    database_uri='sqlite:///database.sqlite3'
+)
 
-# Criando uma lista
-conversa = []
-
-bot.set_trainer(ListTrainer)
-bot.train(conversa)
-
+small_talk = ListTrainer(bot)
+small_talk.train([
+    'Hello',
+    'Hi',
+    'What is your name?',
+    'My name is HAL 9000',
+    'Are you a robot?',
+    "Yes I'm a robot, and you?",
+    "I'm a human",
+    'Are you online?',
+    "Yes I'm online right now",
+    'Are you male?',
+    "No, I don't have a sex, I'm a machine",
+    'Are you female?',
+    'Nice to meet you',
+    'Nice to meet you to!',
+    'Can you open the door?',
+    "I’m sorry Dave, I’m afraid I can’t do that"
+])
 while True:
-    pergunta = input('VocÊ')
-    resposta = bot.get_response(pergunta)
-    if float(resposta.confidence) > 0.5:
-        print('HAL 9000: ', resposta)
-    else:
-        print('HAL 9000: ')
+    try:
+        resp = bot.get_response(input("User: "))
+        if float(resp.confidence) > 0.5:
+            print("HAL 9000: ", resp)
+        else:
+            print("I don't get it :(")
+    except(KeyboardInterrupt, EOFError, SystemExit):
+        break
