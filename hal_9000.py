@@ -27,6 +27,7 @@ small_talk.train([
     'Can you open the door?',
     "I’m sorry Dave, I’m afraid I can’t do that"
 ])
+# infinite loop for return responses
 while True:
     try:
         resp = bot.get_response(input("User: "))
