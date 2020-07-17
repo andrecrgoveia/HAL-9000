@@ -2,6 +2,7 @@ from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
 bot = ChatBot('HAL 9000')
+# local database
 bot = ChatBot(
     'HAL 9000',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
