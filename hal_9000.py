@@ -1,6 +1,7 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
+# name of the bot
 bot = ChatBot('HAL 9000')
 # local database
 bot = ChatBot(
