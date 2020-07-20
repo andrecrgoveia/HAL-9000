@@ -1,9 +1,9 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-# name of the bot
+# Name of the bot
 bot = ChatBot('HAL 9000')
-# local database
+# Local database
 bot = ChatBot(
     'HAL 9000',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
@@ -29,7 +29,7 @@ small_talk.train([
     'Can you open the door?',
     "I’m sorry Dave, I’m afraid I can’t do that"
 ])
-# infinite loop to get responses
+# Infinite loop to get responses
 while True:
     try:
         resp = bot.get_response(input("User: "))
