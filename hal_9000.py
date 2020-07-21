@@ -23,6 +23,8 @@ small_talk.train([
     "Yes I'm online right now",
     'Are you male?',
     "No, I don't have a sex, I'm a machine",
+    'Machine is like a robot?'
+    "No it's two things different!"
     'Are you female?',
     'Nice to meet you',
     'Nice to meet you to!',
