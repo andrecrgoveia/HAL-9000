@@ -3,7 +3,7 @@ from chatterbot.trainers import ListTrainer
 
 # Name of the bot
 bot = ChatBot('HAL 9000')
-# Local database
+# Create a local database
 bot = ChatBot(
     'HAL 9000',
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
