@@ -9,6 +9,7 @@ bot = ChatBot(
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     database_uri='sqlite:///database.sqlite3'
 )
+
 # Conversation in format of list
 small_talk = ListTrainer(bot)
 small_talk.train([
@@ -31,6 +32,7 @@ small_talk.train([
     'Can you open the door?',
     "I’m sorry Dave, I’m afraid I can’t do that"
 ])
+
 # Infinite loop to get responses
 while True:
     try:
