@@ -9,7 +9,6 @@ bot = ChatBot(
     storage_adapter='chatterbot.storage.SQLStorageAdapter',
     database_uri='sqlite:///database.sqlite3'
 )
-
 # Conversation in format of list
 small_talk = ListTrainer(bot)
 small_talk.train([
